@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in/Sign in</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .flip-card {
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: -1%;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+
+</head>
+<body class="min-h-40 flex items-center justify-center bg-blue-500">
+    <div class="flip-card w-full max-w-md rounded-lg shadow-lg bg-white">
+        <div class="flip-card">
+            <div class="flip-card-inner relative">
+                <!-- Login Form -->
+                <div class="flip-card-front bg-white rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="login-email">Email</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="login-email" type="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="login-password">Password</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="login-password" type="password" placeholder="Enter your password">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Log In</button>
+                            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">Forgot Password?</a>
+                        </div>
+                    </form>
+                    <div class="text-center mt-4">
+                        <button class="text-blue-500 hover:text-blue-800 font-bold" onclick="toggleFlip()">Create an account</button>
+                    </div>
+                </div>
+                <!-- Sign Up Form -->
+                <div class="flip-card-back bg-white rounded-xl shadow-xl ">
+                    <h2 class="text-2xl font-bold mb-6 text-center">Sign Up</h2>
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="signup-email">Email</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="signup-email" type="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="signup-password">Password</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="signup-password" type="password" placeholder="Enter your password">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="signup-confirm-password">Confirm Password</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="signup-confirm-password" type="password" placeholder="Confirm your password">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Sign Up</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-4">
+                        <button class="text-blue-500 hover:text-blue-800 font-bold" onclick="toggleFlip()">Already have an account? Sign in</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleFlip() {
+            document.querySelector('.flip-card').classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>
