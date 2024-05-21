@@ -40,3 +40,5 @@ You can customize the appearance and behavior of the page by modifying the follo
 - `index.html`: HTML structure of the page
 - `style.css`: Custom CSS styles (if any)
 - `script.js`: JavaScript for the flip-card animation
+
+- Here the video demostration : https://github.com/Rajat22UEE/Log-in-Sign-up-Tailwind-project/issues/1#issue-2308860829
